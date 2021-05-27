@@ -10,6 +10,9 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  created(){
+    console.log(process.env.NUXT_API_URL);
   }
 }
 </script>
