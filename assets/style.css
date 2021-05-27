@@ -1,0 +1,9 @@
+.box{
+  border: thin solid red;
+}
+.myRow{
+  border: thin solid orange;
+}
+.myCol{
+  border: thin solid purple;
+}
