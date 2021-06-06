@@ -2,6 +2,7 @@
   <v-container>
     <h1>Welcome to nuxtjs template</h1>
     <h1>{{getUser}}</h1>
+    <h1>{{name | capitalize}}</h1>
   </v-container>
 </template>
 
@@ -14,6 +15,7 @@ export default {
     VuetifyLogo
   },
   data:()=>({
+    name : 'hamza',
     users :[
       {name: 'Hamza', blocked: true},
       {name: 'Basit', blocked: false},
