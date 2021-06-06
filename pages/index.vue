@@ -1,6 +1,7 @@
 <template>
   <v-container>
-    <h1>Welcome to nuxtjs template</h1>
+    <h1>{{`Welcome to ${$appName}`}}</h1>
+    <h1>{{$sayHelloTo("Hamza")}}</h1>
     <h1>{{getUser}}</h1>
     <h1>{{name | capitalize}}</h1>
   </v-container>

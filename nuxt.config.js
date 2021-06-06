@@ -31,6 +31,7 @@ export default {
   plugins: [
     "~plugins/preload",
     "~plugins/filters",
+    "~plugins/prototype",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
