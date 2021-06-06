@@ -4,6 +4,7 @@
     <h1>{{$sayHelloTo("Hamza")}}</h1>
     <h1>{{getUser}}</h1>
     <h1>{{name | capitalize}}</h1>
+    <h1>{{$moment().format("DD : MMM : YYYY")}}</h1>
   </v-container>
 </template>
 
@@ -30,7 +31,7 @@ export default {
   computed:{
     getUser(){
       return _.filter(this.users, (user)=>{return !user.blocked})
-    }
+    },
   }
 
 }
