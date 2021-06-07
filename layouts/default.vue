@@ -9,7 +9,7 @@
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in menu"
           :key="i"
           :to="item.to"
           router
@@ -24,15 +24,15 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
+    <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-
+      <v-toolbar-title class="black--text">
+        <h1 v-if="head" class="title">
+          <v-icon left light>{{ head.icon }}</v-icon> {{ head.title }}
+        </h1>
+      </v-toolbar-title>
     </v-app-bar>
-    <v-main >
+    <v-main>
       <v-container>
         <nuxt />
       </v-container>
@@ -45,28 +45,25 @@
 import snackbar from '~/components/snackbar.vue'
 export default {
   components: { snackbar },
-  data () {
+  data() {
     return {
       clipped: false,
       drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Vuetify.js',
     }
-  }
+  },
+  computed: {
+    head() {
+      let x = this.$route;
+      return JSON.parse(localStorage.getItem('head'))
+    },
+    menu() {
+      return this.$menu
+    },
+  },
 }
 </script>

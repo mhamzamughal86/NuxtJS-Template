@@ -32,6 +32,7 @@ export default {
     "~plugins/preload",
     "~plugins/filters",
     "~plugins/prototype",
+    "~plugins/menu",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,6 +52,9 @@ export default {
     '@nuxtjs/moment'
   ],
 
+  router:{
+    middleware: 'page'
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
