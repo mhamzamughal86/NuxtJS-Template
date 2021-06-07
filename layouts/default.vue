@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -36,12 +36,15 @@
       <v-container>
         <nuxt />
       </v-container>
+      <snackbar></snackbar>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import snackbar from '~/components/snackbar.vue'
 export default {
+  components: { snackbar },
   data () {
     return {
       clipped: false,

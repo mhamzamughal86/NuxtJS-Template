@@ -5,6 +5,7 @@
     <h1>{{getUser}}</h1>
     <h1>{{name | capitalize}}</h1>
     <h1>{{$moment().format("DD : MMM : YYYY")}}</h1>
+    <v-btn @click="showSnackbar()">Show snackbar</v-btn>
   </v-container>
 </template>
 
@@ -27,6 +28,15 @@ export default {
   }),
   created(){
     console.log(process.env.NUXT_API_URL);
+  },
+  methods:{
+    showSnackbar(){
+      this.$store.dispatch("snackbar/setSnackbar",{
+        color:'red',
+        text:'showing snackbar',
+        icon: 'mdi-lock'
+      });
+    }
   },
   computed:{
     getUser(){
