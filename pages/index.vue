@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>{{`Welcome to ${$appName}`}}</h1>
+    <h1>{{ `Welcome to ${$appName}` }}</h1>
     <!-- <h1>{{$sayHelloTo("Hamza")}}</h1>
     <h1>{{getUser}}</h1>
     <h1>{{name | capitalize}}</h1>
@@ -15,35 +15,35 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 export default {
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
   },
-  data:()=>({
-    name : 'hamza',
-    users :[
-      {name: 'Hamza', blocked: true},
-      {name: 'Basit', blocked: false},
-      {name: 'Asim', blocked: true},
-      {name: 'Azhar', blocked: false},
-    ]
+  data: () => ({
+    name: 'hamza',
+    users: null,
+    users: [
+      { name: 'Hamza', blocked: true },
+      { name: 'Basit', blocked: false },
+      { name: 'Asim', blocked: true },
+      { name: 'Azhar', blocked: false },
+    ],
   }),
-  created(){
-    console.log(process.env.NUXT_API_URL);
+  created() {
   },
-  methods:{
-    showSnackbar(){
-      this.$store.dispatch("snackbar/setSnackbar",{
-        color:'red',
-        text:'showing snackbar',
-        icon: 'mdi-lock'
-      });
-    }
-  },
-  computed:{
-    getUser(){
-      return _.filter(this.users, (user)=>{return !user.blocked})
+  methods: {
+    showSnackbar() {
+      this.$store.dispatch('snackbar/setSnackbar', {
+        color: 'red',
+        text: 'showing snackbar',
+        icon: 'mdi-lock',
+      })
     },
-
-  }
-
+  },
+  computed: {
+    getUser() {
+      return _.filter(this.users, (user) => {
+        return !user.blocked
+      })
+    },
+  },
 }
 </script>

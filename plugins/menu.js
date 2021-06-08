@@ -13,7 +13,13 @@ const menu =[
     public: true,
   },
   {
-    icon: "mdi-airplane",
+    icon: "mdi-user",
+    title: "Users",
+    to: "/users",
+    public: true,
+  },
+  {
+    icon: "mdi-box",
     title: "Airplane",
     to: "/airplane",
     public: false,
