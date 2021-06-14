@@ -1,5 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
-require('dotenv').config();
+require('dotenv').config()
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -10,29 +10,25 @@ export default {
     titleTemplate: '%s - Template',
     title: 'Template',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    "assets/style.css"
-  ],
+  css: ['assets/style.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    "~plugins/preload",
-    "~plugins/filters",
-    "~plugins/prototype",
-    "~plugins/menu",
+    '~plugins/preload',
+    '~plugins/filters',
+    '~plugins/prototype',
+    '~plugins/menu',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,16 +44,16 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    "@nuxtjs/dotenv",
-    '@nuxtjs/moment'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/moment',
   ],
 
-  router:{
-    middleware: 'page'
-  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: "https://jsonplaceholder.typicode.com"
+    baseURL: 'https://jsonplaceholder.typicode.com',
+  },
+  router: {
+    middleware: 'page',
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -73,13 +69,12 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+          success: colors.green.accent3,
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {},
 }
